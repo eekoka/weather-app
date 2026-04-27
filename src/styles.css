@@ -124,3 +124,19 @@ header {
     color: white;
     align-items: center;
 }
+
+#settings {
+  display: flex;
+  gap: 3px;
+  font-size: 26px;
+  color: #2D3436
+}
+
+#degF {
+  margin-left: 16px;
+}
+
+input[type="radio"] {
+  width: 30px;
+  accent-color: #1A3C6D;
+}
