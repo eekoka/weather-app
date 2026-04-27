@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    background: linear-gradient(0deg, #A8D8FF 0%, #C7B4FF 100%);
+    min-height: 100vh;
+}
+
+#logo-img {
+    width: 40px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search-box {
+  height: 35px;
+  width: 80%;
+  font-size: 24px;
+  border-radius: 25px;
+  background-color: rgba(218, 219, 228, 0.3);
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 2px solid #dadbe4;
+  outline: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#search-box:focus {
+  border: 2px solid #555;
+  width: 90%;
+}
+
+
+#content {
+  /* Semi-transparent background */
+  background: rgba(255, 255, 255, 0.2); 
+  
+  /* The "frosted glass" blur effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  
+  /* Glass edges and depth */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  
+  /* Card sizing (adjust as needed) */
+  padding: 20px;
+  width: 600px;
+
+  color: #1A3C6D
+}
+
+/*
+#loading-screen {
+  color: #8C95A3; /* Soft Slate Blue *
+  font-size: 30px;
+  font-weight: 400; /* Use a thinner weight to make it look "lighter" *
+  letter-spacing: 0.2px;
+}*/
+
+#loading-screen {
+  color: #2D3436;
+  font-weight: 400;
+  letter-spacing: -0.5px; /* Tighter spacing makes it look more "premium" */
+}
+
+
+button {
+  background: #D7C2FF;          /* soft pastel purple */
+  color: #2D3436;        /* deep contrast text */
+  
+  padding: 14px 24px;
+  border-radius: 25px;         /* makes it perfectly round/oval */
+  
+  border: none;
+  font-weight: 300;
+  font-size: 20px;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 13%;
+  height: 43px;
+}
+
+button:hover {
+  transform: scale(1.05); /* Soft zoom on hover */
+}
+
+form {
+    display: flex;
+    gap: 6px;
+    width: 600px;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    color: white;
+    align-items: center;
+}
