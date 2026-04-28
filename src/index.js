@@ -4,45 +4,34 @@ import { getLocation } from "./get-location.js";
 import { getUnit } from "./get-unit.js";
 import { loadPage } from "./load-page.js";
 
-const content = document.querySelector("#content");
-const searchBox = document.querySelector("#search-box");
-const searchBtn = document.querySelector("#search-btn");
-const loadingScreen = document.querySelector("#loading-screen");
-
-const resultImg = document.querySelector("#result-img");
-const resultTemp = document.querySelector("#result-temp");
-const resultsmry = document.querySelector("#result-summary");
-
-//self executable async function for display initial view for default location and default unit
+//self executable async function for display initial view for default location and default unit when website is first opened
 (async () => {
     const [status, weatherData] = await fetchWeatherData("London", getUnit());
     loadPage(status, weatherData, getUnit());
 
 })(); 
 
+//when new location is submitted page should load the new data for new location
+const searchBtn = document.querySelector("#search-btn");
 
-searchBtn.onclick = () => {
+searchBtn.onclick = (event) => {
+    event.preventDefault();
     (async () => {
         const [status, weatherData] = await fetchWeatherData(getLocation(), getUnit());
         loadPage(status, weatherData, getUnit()); 
     })();
 };
 
-
-
-
+//when unit is changed page should reload with correct unit
 const unitRadio = document.querySelectorAll("#settings input");
+const location = document.querySelector("#location");
 
 unitRadio.forEach(radio => {
     radio.addEventListener('change', (event) => {
-    //checks if radio button is checked
-    let unitX;
-    if (event.target.checked) {
-      unitX = event.target.value;
-    }
-    //fetchWeatherData();
-    //leadpagewithweatherdata();
+    (async () => {
+        //using the currently displayed location
+        const [status, weatherData] = await fetchWeatherData(location.textContent, getUnit());
+        loadPage(status, weatherData, getUnit()); 
+    })();
   });
 });
-
-//200 4xx(user check) 5xx (something else)
